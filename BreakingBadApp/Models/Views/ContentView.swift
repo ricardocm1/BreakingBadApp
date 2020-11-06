@@ -19,13 +19,26 @@ struct ContentView: View {
             }
         }
     }
-
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-            .onAppear(perform: onAppear)
+        TabView {
+            CharacterView().tabItem { Image(systemName: "person.3")
+                Text("Characters")
+            }
+            CharacterView().tabItem { Image(systemName: "film")
+                Text("Episodes")
+            }
+            CharacterView().tabItem { Image(systemName: "person.3")
+                Text("Quotes")
+            }
+            CharacterView().tabItem { Image(systemName: "eyes.inverse")
+                Text("Deaths")
+            }
+        }
+        .onAppear(perform: onAppear)
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
