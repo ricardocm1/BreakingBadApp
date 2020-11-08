@@ -20,6 +20,10 @@ struct ContentView: View {
         }
     }
     
+    init() {
+        UITabBar.appearance().barTintColor = UIColor.black
+    }
+
     var body: some View {
         TabView {
             CharacterView().tabItem { Image(systemName: "person.3")
