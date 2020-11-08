@@ -25,13 +25,13 @@ struct ContentView: View {
             CharacterView().tabItem { Image(systemName: "person.3")
                 Text("Characters")
             }
-            CharacterView().tabItem { Image(systemName: "film")
+            EpisodeView().tabItem { Image(systemName: "film")
                 Text("Episodes")
             }
-            CharacterView().tabItem { Image(systemName: "person.3")
+            QuoteView().tabItem { Image(systemName: "person.3")
                 Text("Quotes")
             }
-            CharacterView().tabItem { Image(systemName: "eyes.inverse")
+            DeathView().tabItem { Image(systemName: "eyes.inverse")
                 Text("Deaths")
             }
         }
