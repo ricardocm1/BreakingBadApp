@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1594EF042558581000AB70BA /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594EF032558581000AB70BA /* CharacterListView.swift */; };
+		1594EF0A25585BFA00AB70BA /* FetchImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1594EF0925585BFA00AB70BA /* FetchImage */; };
+		1594EF11255861DE00AB70BA /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */; };
 		D1785FD325536A9C0041C6AA /* BreakingBadAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1785FD225536A9C0041C6AA /* BreakingBadAppApp.swift */; };
 		D1785FD525536A9C0041C6AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1785FD425536A9C0041C6AA /* ContentView.swift */; };
 		D1785FD725536A9C0041C6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1785FD625536A9C0041C6AA /* Assets.xcassets */; };
@@ -47,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1594EF032558581000AB70BA /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
 		D1785FCF25536A9C0041C6AA /* BreakingBadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1785FD225536A9C0041C6AA /* BreakingBadAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadAppApp.swift; sourceTree = "<group>"; };
 		D1785FD425536A9C0041C6AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1594EF0A25585BFA00AB70BA /* FetchImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1594EF0F2558619800AB70BA /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				E049300E2555F39C00BAB645 /* CharacterView.swift */,
+				1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
 		D1785FC625536A9C0041C6AA = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				D1CE0B0325583B0B000305EE /* QuoteInfoView.swift */,
+				1594EF032558581000AB70BA /* CharacterListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -211,9 +227,9 @@
 		E04930022555F32700BAB645 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1594EF0F2558619800AB70BA /* Characters */,
 				D1CE0B0D255842D7000305EE /* Quote */,
 				D1785FD425536A9C0041C6AA /* ContentView.swift */,
-				E049300E2555F39C00BAB645 /* CharacterView.swift */,
 				E04930132555F3B000BAB645 /* EpisodeView.swift */,
 				E049301D2555F3CA00BAB645 /* DeathView.swift */,
 			);
@@ -236,6 +252,9 @@
 			dependencies = (
 			);
 			name = BreakingBadApp;
+			packageProductDependencies = (
+				1594EF0925585BFA00AB70BA /* FetchImage */,
+			);
 			productName = BreakingBadApp;
 			productReference = D1785FCF25536A9C0041C6AA /* BreakingBadApp.app */;
 			productType = "com.apple.product-type.application";
@@ -307,6 +326,9 @@
 				Base,
 			);
 			mainGroup = D1785FC625536A9C0041C6AA;
+			packageReferences = (
+				1594EF0825585BFA00AB70BA /* XCRemoteSwiftPackageReference "FetchImage" */,
+			);
 			productRefGroup = D1785FD025536A9C0041C6AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1594EF11255861DE00AB70BA /* CharactersListViewModel.swift in Sources */,
 				D1786026255379870041C6AA /* APISupport.swift in Sources */,
 				D178600225536B8D0041C6AA /* Character.swift in Sources */,
 				E049300F2555F39C00BAB645 /* CharacterView.swift in Sources */,
@@ -361,6 +384,7 @@
 				E04930192555F3BE00BAB645 /* QuoteView.swift in Sources */,
 				D1786024255379870041C6AA /* Requester.swift in Sources */,
 				D1786014255377B10041C6AA /* Death.swift in Sources */,
+				1594EF042558581000AB70BA /* CharacterListView.swift in Sources */,
 				D1CE0B0425583B0B000305EE /* QuoteInfoView.swift in Sources */,
 				D1786025255379870041C6AA /* URLProviders.swift in Sources */,
 				D1CE0B0925583DE1000305EE /* QuotesViewModel.swift in Sources */,
@@ -684,6 +708,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1594EF0825585BFA00AB70BA /* XCRemoteSwiftPackageReference "FetchImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/FetchImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1594EF0925585BFA00AB70BA /* FetchImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1594EF0825585BFA00AB70BA /* XCRemoteSwiftPackageReference "FetchImage" */;
+			productName = FetchImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D1785FC725536A9C0041C6AA /* Project object */;
 }
