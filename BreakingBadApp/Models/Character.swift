@@ -1,6 +1,6 @@
 import Foundation
 
-struct Character: Decodable {
+struct Character: Decodable, Identifiable {
     let id: Int
     let name: String
     let birthday: String
