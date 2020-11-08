@@ -26,6 +26,8 @@
 		D1CE0B0425583B0B000305EE /* QuoteInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0B0325583B0B000305EE /* QuoteInfoView.swift */; };
 		D1CE0B0925583DE1000305EE /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0B0825583DE1000305EE /* QuotesViewModel.swift */; };
 		D1CE0B1325584503000305EE /* View+UINavigationBarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0B1225584503000305EE /* View+UINavigationBarAppearance.swift */; };
+		E01CACDE25588532000AE23D /* EpisodesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CACDD25588532000AE23D /* EpisodesListViewModel.swift */; };
+		E01CACE3255886C2000AE23D /* EpisodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01CACE2255886C2000AE23D /* EpisodeListView.swift */; };
 		E049300F2555F39C00BAB645 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E049300E2555F39C00BAB645 /* CharacterView.swift */; };
 		E04930142555F3B000BAB645 /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04930132555F3B000BAB645 /* EpisodeView.swift */; };
 		E04930192555F3BE00BAB645 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04930182555F3BE00BAB645 /* QuoteView.swift */; };
@@ -74,6 +76,8 @@
 		D1CE0B0325583B0B000305EE /* QuoteInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteInfoView.swift; sourceTree = "<group>"; };
 		D1CE0B0825583DE1000305EE /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		D1CE0B1225584503000305EE /* View+UINavigationBarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+UINavigationBarAppearance.swift"; sourceTree = "<group>"; };
+		E01CACDD25588532000AE23D /* EpisodesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesListViewModel.swift; sourceTree = "<group>"; };
+		E01CACE2255886C2000AE23D /* EpisodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListView.swift; sourceTree = "<group>"; };
 		E049300E2555F39C00BAB645 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 		E04930132555F3B000BAB645 /* EpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
 		E04930182555F3BE00BAB645 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			children = (
 				D1CE0B0325583B0B000305EE /* QuoteInfoView.swift */,
 				1594EF032558581000AB70BA /* CharacterListView.swift */,
+				E01CACE2255886C2000AE23D /* EpisodeListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -224,13 +229,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E01CACD425588503000AE23D /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				E01CACDD25588532000AE23D /* EpisodesListViewModel.swift */,
+				E04930132555F3B000BAB645 /* EpisodeView.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
 		E04930022555F32700BAB645 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E01CACD425588503000AE23D /* Episodes */,
 				1594EF0F2558619800AB70BA /* Characters */,
 				D1CE0B0D255842D7000305EE /* Quote */,
 				D1785FD425536A9C0041C6AA /* ContentView.swift */,
-				E04930132555F3B000BAB645 /* EpisodeView.swift */,
 				E049301D2555F3CA00BAB645 /* DeathView.swift */,
 			);
 			path = Views;
@@ -380,12 +394,14 @@
 				D178600A25536CDD0041C6AA /* Episode.swift in Sources */,
 				D1785FD525536A9C0041C6AA /* ContentView.swift in Sources */,
 				D178600F2553771B0041C6AA /* Quote.swift in Sources */,
+				E01CACDE25588532000AE23D /* EpisodesListViewModel.swift in Sources */,
 				D1CE0B1325584503000305EE /* View+UINavigationBarAppearance.swift in Sources */,
 				E04930192555F3BE00BAB645 /* QuoteView.swift in Sources */,
 				D1786024255379870041C6AA /* Requester.swift in Sources */,
 				D1786014255377B10041C6AA /* Death.swift in Sources */,
 				1594EF042558581000AB70BA /* CharacterListView.swift in Sources */,
 				D1CE0B0425583B0B000305EE /* QuoteInfoView.swift in Sources */,
+				E01CACE3255886C2000AE23D /* EpisodeListView.swift in Sources */,
 				D1786025255379870041C6AA /* URLProviders.swift in Sources */,
 				D1CE0B0925583DE1000305EE /* QuotesViewModel.swift in Sources */,
 				D1785FD325536A9C0041C6AA /* BreakingBadAppApp.swift in Sources */,
