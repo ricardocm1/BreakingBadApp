@@ -20,7 +20,7 @@ struct QuoteInfoView: View {
             Text("'\(quote.quote)'")
                 .bold()
                 .foregroundColor(.black)
-                .font(.title2)
+                .font(.title3)
                 .minimumScaleFactor(minimumScaleFactor)
             
             Spacer()

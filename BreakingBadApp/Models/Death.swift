@@ -1,6 +1,6 @@
 import Foundation
 
-struct Death: Decodable {
+struct Death: Decodable, Identifiable {
     let id: Int
     let death: String
     let cause: String

@@ -10,6 +10,8 @@
 		1594EF042558581000AB70BA /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594EF032558581000AB70BA /* CharacterListView.swift */; };
 		1594EF0A25585BFA00AB70BA /* FetchImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1594EF0925585BFA00AB70BA /* FetchImage */; };
 		1594EF11255861DE00AB70BA /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */; };
+		D16A85852558A93A00697023 /* DeathsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A85842558A93A00697023 /* DeathsViewModel.swift */; };
+		D16A858D2558A9CA00697023 /* DeathInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A858C2558A9CA00697023 /* DeathInfoView.swift */; };
 		D1785FD325536A9C0041C6AA /* BreakingBadAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1785FD225536A9C0041C6AA /* BreakingBadAppApp.swift */; };
 		D1785FD525536A9C0041C6AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1785FD425536A9C0041C6AA /* ContentView.swift */; };
 		D1785FD725536A9C0041C6AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1785FD625536A9C0041C6AA /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		1594EF032558581000AB70BA /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
+		D16A85842558A93A00697023 /* DeathsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathsViewModel.swift; sourceTree = "<group>"; };
+		D16A858C2558A9CA00697023 /* DeathInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathInfoView.swift; sourceTree = "<group>"; };
 		D1785FCF25536A9C0041C6AA /* BreakingBadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1785FD225536A9C0041C6AA /* BreakingBadAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadAppApp.swift; sourceTree = "<group>"; };
 		D1785FD425536A9C0041C6AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 				1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */,
 			);
 			path = Characters;
+			sourceTree = "<group>";
+		};
+		D16A85832558A8B200697023 /* Deaths */ = {
+			isa = PBXGroup;
+			children = (
+				E049301D2555F3CA00BAB645 /* DeathView.swift */,
+				D16A85842558A93A00697023 /* DeathsViewModel.swift */,
+			);
+			path = Deaths;
 			sourceTree = "<group>";
 		};
 		D1785FC625536A9C0041C6AA = {
@@ -208,6 +221,7 @@
 				D1CE0B0325583B0B000305EE /* QuoteInfoView.swift */,
 				1594EF032558581000AB70BA /* CharacterListView.swift */,
 				E01CACE2255886C2000AE23D /* EpisodeListView.swift */,
+				D16A858C2558A9CA00697023 /* DeathInfoView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -241,11 +255,11 @@
 		E04930022555F32700BAB645 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D16A85832558A8B200697023 /* Deaths */,
 				E01CACD425588503000AE23D /* Episodes */,
 				1594EF0F2558619800AB70BA /* Characters */,
 				D1CE0B0D255842D7000305EE /* Quote */,
 				D1785FD425536A9C0041C6AA /* ContentView.swift */,
-				E049301D2555F3CA00BAB645 /* DeathView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +404,7 @@
 				D178600225536B8D0041C6AA /* Character.swift in Sources */,
 				E049300F2555F39C00BAB645 /* CharacterView.swift in Sources */,
 				E049301E2555F3CA00BAB645 /* DeathView.swift in Sources */,
+				D16A858D2558A9CA00697023 /* DeathInfoView.swift in Sources */,
 				E04930142555F3B000BAB645 /* EpisodeView.swift in Sources */,
 				D178600A25536CDD0041C6AA /* Episode.swift in Sources */,
 				D1785FD525536A9C0041C6AA /* ContentView.swift in Sources */,
@@ -401,6 +416,7 @@
 				D1786014255377B10041C6AA /* Death.swift in Sources */,
 				1594EF042558581000AB70BA /* CharacterListView.swift in Sources */,
 				D1CE0B0425583B0B000305EE /* QuoteInfoView.swift in Sources */,
+				D16A85852558A93A00697023 /* DeathsViewModel.swift in Sources */,
 				E01CACE3255886C2000AE23D /* EpisodeListView.swift in Sources */,
 				D1786025255379870041C6AA /* URLProviders.swift in Sources */,
 				D1CE0B0925583DE1000305EE /* QuotesViewModel.swift in Sources */,
