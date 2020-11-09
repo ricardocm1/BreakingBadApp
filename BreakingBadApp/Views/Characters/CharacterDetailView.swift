@@ -49,10 +49,6 @@ struct CharacterDetailView: View {
                     .font(.body)
                     .foregroundColor(Color(.darkGray))
                 
-    //            Text("seasons: \(character.appearance.)")
-    //                .font(.body)
-    //                .foregroundColor(Color(.darkGray))
-                
                 Spacer().frame(height: 20)
                 
                 Text(character.portrayed)
