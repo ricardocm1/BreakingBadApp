@@ -19,7 +19,9 @@ struct CharacterView: View {
             List {
                 if let characters = self.viewModel.characters {
                     ForEach(characters) { character in
+                        NavigationLink(destination: CharacterDetailView(character: character)) {
                             CharacterListView(character: character)
+                        }
                     }
                 } else {
                     ProgressView()
