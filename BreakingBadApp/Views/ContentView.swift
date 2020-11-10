@@ -23,25 +23,29 @@ struct ContentView: View {
     init() {
         UITabBar.appearance().barTintColor = UIColor.black
     }
-
+    
     var body: some View {
         TabView {
             CharacterView().tabItem { Image(systemName: "person.3")
                 Text("Characters")
             }
-            EpisodeView().tabItem { Image(systemName: "film")
+            EpisodeView().tabItem {
+                Image(systemName: "film")
                 Text("Episodes")
             }
-            QuoteView().tabItem { Image(systemName: "person.3")
+            QuoteView().tabItem { Image(systemName: "ellipsis.bubble")
                 Text("Quotes")
             }
-            DeathView().tabItem { Image(systemName: "eyes.inverse")
+            DeathView().tabItem { Image(systemName: "waveform.path.ecg")
                 Text("Deaths")
             }
         }
         .onAppear(perform: onAppear)
+        .accentColor(.yellow)
     }
 }
+
+
 
 
 struct ContentView_Previews: PreviewProvider {
