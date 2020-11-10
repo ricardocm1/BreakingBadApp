@@ -16,7 +16,7 @@ extension View {
         appearance.titleTextAttributes = [
             .foregroundColor: UIColor.white
         ]
-        appearance.backgroundColor = UIColor(Color(.darkGray))
+        appearance.backgroundColor = UIColor(Color(.black))
         
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance

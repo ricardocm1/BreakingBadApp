@@ -8,27 +8,34 @@
 import SwiftUI
 
 struct CharacterView: View {
-    @ObservedObject var viewModel = CharactersListViewModel()
+    @ObservedObject var viewModel: CharactersListViewModel
     
     init() {
+        viewModel = CharactersListViewModel()
         configNavigationBarAppearance()
+        UITableView.appearance().backgroundColor = .black
     }
     
     var body: some View {
         NavigationView {
-            List {
-                if let characters = self.viewModel.characters {
+            if let characters = self.viewModel.characters {
+                List {
                     ForEach(characters) { character in
                         NavigationLink(destination: CharacterDetailView(character: character)) {
                             CharacterListView(character: character)
                         }
                     }
-                } else {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                    .listRowBackground(Color.black)
                 }
+                .navigationBarTitle("Characters", displayMode: .inline)
             }
-            .navigationBarTitle("Characters", displayMode: .inline)
+            else {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+            }
+        }
+        .onAppear() {
+            viewModel.fetchData()
         }
     }
 }

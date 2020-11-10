@@ -8,13 +8,9 @@
 import SwiftUI
 
 class EpisodesListViewModel: ObservableObject {
-    @Published var episodes: [Episode] = []
+    @Published var episodes: [Episode]?
 
-    init() {
-        fetchData()
-    }
-
-    private func fetchData() {
+    func fetchData() {
         let search = SearchAPIURLProvider(endpoint: .episodes)
         
         Requester.request(search: search) { [weak self] (result: Result<[Episode], APIError>) in

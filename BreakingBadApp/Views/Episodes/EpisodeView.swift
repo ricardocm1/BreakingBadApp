@@ -8,26 +8,32 @@
 import SwiftUI
 
 struct EpisodeView: View {
-    @ObservedObject var viewModel = EpisodesListViewModel()
+    @ObservedObject var viewModel: EpisodesListViewModel
     
     init() {
+        viewModel = EpisodesListViewModel()
         configNavigationBarAppearance()
+        UITableView.appearance().backgroundColor = .black
     }
     
     var body: some View {
         NavigationView {
-            List {
-                
-                if let episodes = viewModel.episodes {
+            if let episodes = viewModel.episodes {
+                List {
                     ForEach(episodes) { episode in
                         EpisodeListView(episode: episode)
                     }
-                } else {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                    .listRowBackground(Color.black)
                 }
+                .navigationBarTitle("Episodes", displayMode: .inline)
             }
-            .navigationBarTitle("Episodes", displayMode: .inline)
+            else {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+            }
+        }
+        .onAppear() {
+            viewModel.fetchData()
         }
     }
 }

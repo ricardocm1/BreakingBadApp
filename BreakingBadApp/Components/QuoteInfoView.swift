@@ -17,27 +17,32 @@ struct QuoteInfoView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            Text("Quote:")
+                .foregroundColor(.yellow)
+                .bold()
             Text("'\(quote.quote)'")
                 .bold()
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .font(.title3)
                 .minimumScaleFactor(minimumScaleFactor)
             
             Spacer()
             
-            Text(quote.author)
-                .font(.subheadline)
-                .italic()
-                .foregroundColor(Color(.red))
-                .minimumScaleFactor(minimumScaleFactor)
-            
-            Spacer()
-            
-            Text(quote.series)
-                .font(.subheadline)
-                .underline()
-                .foregroundColor(Color(.black))
-                .minimumScaleFactor(minimumScaleFactor)
+            HStack {
+                Text("Author:")
+                    .foregroundColor(.green)
+                Text(quote.author)
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .minimumScaleFactor(minimumScaleFactor)
+                
+                Text("Serie:")
+                    .foregroundColor(.green)
+                Text(quote.series)
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .minimumScaleFactor(minimumScaleFactor)
+            }
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .leading)
         .padding(10)
@@ -46,6 +51,8 @@ struct QuoteInfoView: View {
 
 struct QuoteInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteInfoView(Quote(id: 1, quote: "I am not in danger, Skyler. I am the danger!", author: "Walter White", series: "Breaking Bad")).previewLayout(.fixed(width: 375, height: 100))
+        QuoteInfoView(Quote(id: 1, quote: "I am not in danger, Skyler. I am the danger!", author: "Walter White", series: "Breaking Bad"))
+            .previewLayout(.fixed(width: 375, height: 100))
+            .background(Color.black)
     }
 }

@@ -34,6 +34,7 @@ struct CharacterListView: View {
             VStack {
                 Text(character.name)
                     .bold()
+                    .foregroundColor(.white)
                     .font(.title2)
                     .minimumScaleFactor(minimumScaleFactor)
                 
@@ -50,7 +51,7 @@ struct CharacterListView: View {
                     Text(character.status)
                         .bold()
                         .font(.subheadline)
-                        .foregroundColor(Color(.red))
+                        .foregroundColor(Color(.yellow))
                         .minimumScaleFactor(minimumScaleFactor)
                 }
             }
@@ -79,6 +80,8 @@ struct CharacterListView_Previews: PreviewProvider {
                             nickname: "Heisenberg",
                             appearance: [1, 2, 3, 4, 5],
                             portrayed: "Bryan Cranston",
-                            category: "Breaking Bad")).previewLayout(.fixed(width: 375, height: 110))
+                            category: "Breaking Bad"))
+            .previewLayout(.fixed(width: 375, height: 110))
+            .background(Color.black)
     }
 }

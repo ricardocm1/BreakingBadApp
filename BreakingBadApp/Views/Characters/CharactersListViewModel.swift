@@ -8,13 +8,9 @@
 import SwiftUI
 
 class CharactersListViewModel: ObservableObject {
-    @Published var characters: [Character] = []
+    @Published var characters: [Character]?
 
-    init() {
-        fetchData()
-    }
-
-    private func fetchData() {
+    func fetchData() {
         let search = SearchAPIURLProvider(endpoint: .characters)
         
         Requester.request(search: search) { [weak self] (result: Result<[Character], APIError>) in

@@ -8,26 +8,32 @@
 import SwiftUI
 
 struct DeathView: View {
-    @ObservedObject var viewModel = DeathsViewModel()
+    @ObservedObject var viewModel: DeathsViewModel
     
     init() {
+        viewModel = DeathsViewModel()
         configNavigationBarAppearance()
+        UITableView.appearance().backgroundColor = .black
     }
     
     var body: some View {
         NavigationView {
-            List {
-                if let deaths = viewModel.deaths {
+            if let deaths = viewModel.deaths {
+                List {
                     ForEach(deaths) { death in
                             DeathInfoView(death)
                     }
+                    .listRowBackground(Color.black)
                 }
-                else {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                }
+                .navigationBarTitle("Deaths", displayMode: .inline)
             }
-            .navigationBarTitle("Deaths", displayMode: .inline)
+            else {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+            }
+        }
+        .onAppear() {
+            viewModel.fetchData()
         }
     }
 }

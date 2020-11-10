@@ -8,26 +8,32 @@
 import SwiftUI
 
 struct QuoteView: View {
-    @ObservedObject var viewModel = QuotesViewModel()
+    @ObservedObject var viewModel: QuotesViewModel
     
     init() {
+        viewModel = QuotesViewModel()
         configNavigationBarAppearance()
+        UITableView.appearance().backgroundColor = .black
     }
     
     var body: some View {
         NavigationView {
-            List {
-                if let quotes = viewModel.quotes {
+            if let quotes = viewModel.quotes {
+                List {
                     ForEach(quotes) { quote in
                             QuoteInfoView(quote)
                     }
+                    .listRowBackground(Color.black)
                 }
-                else {
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                }
+                .navigationBarTitle("Quotes", displayMode: .inline)
             }
-            .navigationBarTitle("Quotes", displayMode: .inline)
+            else {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+            }
+        }
+        .onAppear() {
+            viewModel.fetchData()
         }
     }
 }
