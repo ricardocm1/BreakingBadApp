@@ -18,34 +18,34 @@ struct EpisodeListView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Episode:")
+                .foregroundColor(.yellow)
                 .bold()
-            Text("'\(episode.title)'")
+            Text(episode.title)
                 .bold()
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .font(.title2)
                 .minimumScaleFactor(minimumScaleFactor)
             
             Spacer()
             
-            HStack{
+            HStack {
                 Text("Release date:")
+                    .foregroundColor(.green)
                 Text(episode.date)
                     .font(.subheadline)
-                    .italic()
-                    .foregroundColor(Color(.black))
+                    .foregroundColor(Color(.white))
                     .minimumScaleFactor(minimumScaleFactor)
                 
                 Text("  Season:")
+                    .foregroundColor(.green)
                 Text(episode.season)
                     .font(.subheadline)
-                    .underline()
-                    .foregroundColor(Color(.black))
+                    .foregroundColor(Color(.white))
                     .minimumScaleFactor(minimumScaleFactor)
             }
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .leading)
         .padding(10)
-        .background(Color.yellow)
     }
 }
 
@@ -58,6 +58,8 @@ struct EpisodeInfoView_Previews: PreviewProvider {
                             episode: "1",
                             date: "1/1/2000",
                             characters: ["Characters"],
-                            series: "2222")).previewLayout(.fixed(width: 375, height: 100))
+                            series: "2222"))
+            .previewLayout(.fixed(width: 375, height: 100))
+            .background(Color.black)
     }
 }

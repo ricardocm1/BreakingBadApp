@@ -8,13 +8,9 @@
 import SwiftUI
 
 class QuotesViewModel: ObservableObject {
-    @Published var quotes: [Quote] = []
+    @Published var quotes: [Quote]?
     
-    init() {
-        fetchData()
-    }
-    
-    private func fetchData() {
+    func fetchData() {
         let search = SearchAPIURLProvider(endpoint: .quotes)
         
         Requester.request(search: search) { [weak self] (result: Result<[Quote], APIError>) in

@@ -8,13 +8,9 @@
 import Foundation
 
 class DeathsViewModel: ObservableObject {
-    @Published var deaths: [Death] = []
+    @Published var deaths: [Death]?
     
-    init() {
-        fetchData()
-    }
-    
-    private func fetchData() {
+    func fetchData() {
         let search = SearchAPIURLProvider(endpoint: .deaths)
         
         Requester.request(search: search) { [weak self] (result: Result<[Death], APIError>) in

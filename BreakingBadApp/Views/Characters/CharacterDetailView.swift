@@ -18,45 +18,58 @@ struct CharacterDetailView: View {
     }
     
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
-            image
-                .view?
-                .resizable()
-                .frame(width: 200, height: 200)
-                .clipShape(Circle())
+        ZStack {
+                Color.black
+                .edgesIgnoringSafeArea(.all)
             
-            Group {
-                Text(character.nickname)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .fontWeight(.heavy)
-                
-                Text(character.occupation.joined(separator: "\n"))
-                    .font(.title3)
-                    .foregroundColor(Color(.darkGray))
-                    .multilineTextAlignment(.center)
+            VStack(alignment: .center, spacing: 10) {
+                image
+                    .view?
+                    .resizable()
+                    .frame(width: 250, height: 250)
+                    .clipShape(Circle())
                 
                 Spacer().frame(height: 20)
                 
-                Text(character.birthday)
-                    .font(.body)
-                    .foregroundColor(Color(.darkGray))
-                
-                Text(character.status)
-                    .font(.body)
-                    .foregroundColor(Color(.darkGray))
-                
-                Text(character.category)
-                    .font(.body)
-                    .foregroundColor(Color(.darkGray))
-                
-                Spacer().frame(height: 20)
-                
-                Text(character.portrayed)
-                    .font(.body)
-                    .foregroundColor(Color(.darkGray))
+                Group {
+                    Text(character.nickname)
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.white)
+                        .fontWeight(.heavy)
+                    
+                    Text(character.occupation.joined(separator: "\n"))
+                        .font(.title3)
+                        .foregroundColor(Color(.darkGray))
+                        .multilineTextAlignment(.center)
+                    
+                    Spacer().frame(height: 20)
+                    
+                    Text(character.status)
+                        .font(.body)
+                        .foregroundColor(Color(.yellow))
+                    
+                    HStack {
+                        Text("Birthday:")
+                            .foregroundColor(.green)
+                            .font(.subheadline)
+                            .bold()
+                        Text(character.birthday)
+                            .font(.body)
+                            .foregroundColor(Color(.white))
+                    }
+                    
+                    HStack {
+                        Text("Portrayed by:")
+                            .foregroundColor(.green)
+                            .font(.subheadline)
+                            .bold()
+                        Text(character.portrayed)
+                            .font(.body)
+                            .foregroundColor(Color(.white))
+                    }
+                }
             }
         }
-        .padding(40)
         .navigationBarTitle(character.name, displayMode: .inline)
     }
 }
