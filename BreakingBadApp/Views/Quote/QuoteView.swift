@@ -18,18 +18,22 @@ struct QuoteView: View {
     
     var body: some View {
         NavigationView {
-            if let quotes = viewModel.quotes {
-                List {
-                    ForEach(quotes) { quote in
-                            QuoteInfoView(quote)
+            ZStack {
+                Color.black
+                    .edgesIgnoringSafeArea(.all)
+                if let quotes = viewModel.quotes {
+                    List {
+                        ForEach(quotes) { quote in
+                                QuoteInfoView(quote)
+                        }
+                        .listRowBackground(Color.black)
                     }
-                    .listRowBackground(Color.black)
+                    .navigationBarTitle("Quotes", displayMode: .inline)
                 }
-                .navigationBarTitle("Quotes", displayMode: .inline)
-            }
-            else {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                else {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                }
             }
         }
         .onAppear() {

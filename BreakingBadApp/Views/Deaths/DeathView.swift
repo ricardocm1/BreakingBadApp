@@ -18,18 +18,22 @@ struct DeathView: View {
     
     var body: some View {
         NavigationView {
-            if let deaths = viewModel.deaths {
-                List {
-                    ForEach(deaths) { death in
-                            DeathInfoView(death)
+            ZStack {
+                Color.black
+                    .edgesIgnoringSafeArea(.all)
+                if let deaths = viewModel.deaths {
+                    List {
+                        ForEach(deaths) { death in
+                                DeathInfoView(death)
+                        }
+                        .listRowBackground(Color.black)
                     }
-                    .listRowBackground(Color.black)
+                    .navigationBarTitle("Deaths", displayMode: .inline)
                 }
-                .navigationBarTitle("Deaths", displayMode: .inline)
-            }
-            else {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                else {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                }
             }
         }
         .onAppear() {

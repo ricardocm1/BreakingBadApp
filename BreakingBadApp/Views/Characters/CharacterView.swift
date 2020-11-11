@@ -18,20 +18,24 @@ struct CharacterView: View {
     
     var body: some View {
         NavigationView {
-            if let characters = self.viewModel.characters {
-                List {
-                    ForEach(characters) { character in
-                        NavigationLink(destination: CharacterDetailView(character: character)) {
-                            CharacterListView(character: character)
+            ZStack {
+                Color.black
+                    .edgesIgnoringSafeArea(.all)
+                if let characters = self.viewModel.characters {
+                    List {
+                        ForEach(characters) { character in
+                            NavigationLink(destination: CharacterDetailView(character: character)) {
+                                CharacterListView(character: character)
+                            }
                         }
+                        .listRowBackground(Color.black)
                     }
-                    .listRowBackground(Color.black)
+                    .navigationBarTitle("Characters", displayMode: .inline)
                 }
-                .navigationBarTitle("Characters", displayMode: .inline)
-            }
-            else {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                else {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                }
             }
         }
         .onAppear() {

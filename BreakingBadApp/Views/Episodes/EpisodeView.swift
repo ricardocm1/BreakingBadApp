@@ -18,18 +18,22 @@ struct EpisodeView: View {
     
     var body: some View {
         NavigationView {
-            if let episodes = viewModel.episodes {
-                List {
-                    ForEach(episodes) { episode in
-                        EpisodeListView(episode: episode)
+            ZStack {
+                Color.black
+                    .edgesIgnoringSafeArea(.all)
+                if let episodes = viewModel.episodes {
+                    List {
+                        ForEach(episodes) { episode in
+                            EpisodeListView(episode: episode)
+                        }
+                        .listRowBackground(Color.black)
                     }
-                    .listRowBackground(Color.black)
+                    .navigationBarTitle("Episodes", displayMode: .inline)
                 }
-                .navigationBarTitle("Episodes", displayMode: .inline)
-            }
-            else {
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                else {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                }
             }
         }
         .onAppear() {
