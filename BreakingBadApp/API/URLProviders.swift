@@ -40,6 +40,7 @@ struct SearchAPIURLProvider: URLProvider {
         case episodes
         case quote(id: Int)
         case quotes
+        case characterQuotes(names: [String])
         case death(id: Int)
         case deaths
         
@@ -51,6 +52,11 @@ struct SearchAPIURLProvider: URLProvider {
                 return "episodes/\(id)"
             case .quote(let id):
                 return "quotes/\(id)"
+            case .characterQuotes(let names):
+                guard let firstName = names.first, let lastName = names.last else {
+                    return ""
+                }
+                return "quote?author=\(firstName)+\(lastName)"
             case .death(let id):
                 return "deaths/\(id)"
             default:

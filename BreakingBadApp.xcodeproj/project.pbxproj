@@ -10,6 +10,7 @@
 		1594EF042558581000AB70BA /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594EF032558581000AB70BA /* CharacterListView.swift */; };
 		1594EF0A25585BFA00AB70BA /* FetchImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1594EF0925585BFA00AB70BA /* FetchImage */; };
 		1594EF11255861DE00AB70BA /* CharactersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */; };
+		15CD09782563821C005D3102 /* CharacterQuotesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CD09772563821C005D3102 /* CharacterQuotesListViewModel.swift */; };
 		D16A85852558A93A00697023 /* DeathsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A85842558A93A00697023 /* DeathsViewModel.swift */; };
 		D16A858D2558A9CA00697023 /* DeathInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A858C2558A9CA00697023 /* DeathInfoView.swift */; };
 		D1785FD325536A9C0041C6AA /* BreakingBadAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1785FD225536A9C0041C6AA /* BreakingBadAppApp.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		1594EF032558581000AB70BA /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewModel.swift; sourceTree = "<group>"; };
+		15CD09772563821C005D3102 /* CharacterQuotesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterQuotesListViewModel.swift; sourceTree = "<group>"; };
 		D16A85842558A93A00697023 /* DeathsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathsViewModel.swift; sourceTree = "<group>"; };
 		D16A858C2558A9CA00697023 /* DeathInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathInfoView.swift; sourceTree = "<group>"; };
 		D1785FCF25536A9C0041C6AA /* BreakingBadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 				E049300E2555F39C00BAB645 /* CharacterView.swift */,
 				1594EF10255861DE00AB70BA /* CharactersListViewModel.swift */,
 				D1F90AA9255961DA00838B81 /* CharacterDetailView.swift */,
+				15CD09772563821C005D3102 /* CharacterQuotesListViewModel.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				D1786025255379870041C6AA /* URLProviders.swift in Sources */,
 				D1CE0B0925583DE1000305EE /* QuotesViewModel.swift in Sources */,
 				D1785FD325536A9C0041C6AA /* BreakingBadAppApp.swift in Sources */,
+				15CD09782563821C005D3102 /* CharacterQuotesListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
