@@ -1,6 +1,6 @@
 import Foundation
 
-struct Quote: Decodable, Identifiable {
+struct Quote: Decodable, Identifiable, Hashable {
     let id: Int
     let quote: String
     let author: String

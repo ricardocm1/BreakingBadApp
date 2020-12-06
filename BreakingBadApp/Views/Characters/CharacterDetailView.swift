@@ -11,10 +11,12 @@ import FetchImage
 struct CharacterDetailView: View {
     private let character: Character
     @ObservedObject var image: FetchImage
+    @ObservedObject var quoteListViewModel: CharacterQuotesListViewModel
     
     init(character: Character) {
         self.character = character
         image = FetchImage(url: URL(string: character.imageUrl)!)
+        quoteListViewModel = CharacterQuotesListViewModel(character: character)
     }
     
     var body: some View {
@@ -23,15 +25,17 @@ struct CharacterDetailView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .center, spacing: 10) {
-                image
-                    .view?
-                    .resizable()
-                    .frame(width: 250, height: 250)
-                    .clipShape(Circle())
-                
-                Spacer().frame(height: 20)
-                
                 Group {
+                    Spacer().frame(height: 20)
+                    
+                    image
+                        .view?
+                        .resizable()
+                        .frame(width: 250, height: 250)
+                        .clipShape(Circle())
+                    
+                    Spacer().frame(height: 20)
+                    
                     Text(character.nickname)
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.white)
@@ -68,9 +72,29 @@ struct CharacterDetailView: View {
                             .foregroundColor(Color(.white))
                     }
                 }
+                
+                Spacer()
+                
+                if let characterQuotes = quoteListViewModel.quotes {
+                    ScrollView(.horizontal, showsIndicators: true) {
+                        HStack {
+                            ForEach(characterQuotes, id: \.self) { quote in
+                                QuoteInfoView(quote)
+                            }
+                        }
+                        .padding(.init(top: 16, leading: 8, bottom: 16, trailing: 8))
+                    }
+                } else {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .frame(minHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
             }
         }
         .navigationBarTitle(character.name, displayMode: .inline)
+        .onAppear() {
+            quoteListViewModel.fetchData()
+        }
     }
 }
 
